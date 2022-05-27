@@ -1,4 +1,4 @@
-# React Template by Marie Impens
+# React Portfolio site by Marie Impens
 
 ## Available Scripts
 
