@@ -1,9 +1,15 @@
 import React from 'react';
-import './App.css';
+import AboutSection from './components/AboutSection';
+// Import global style
+import GlobalStyle from './components/GlobalStyle';
 
 const App = () => {
   return (
-    <div>Hello</div>
+    <div>
+      <GlobalStyle />
+      <AboutSection />
+    </div>
+
   );
 };
 
