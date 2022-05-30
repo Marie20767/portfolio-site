@@ -58,6 +58,12 @@ const Project = styled.div`
     align-items: center;
     text-decoration: none;
     color: white;
+    transition: all .3s ease-in-out;
+
+    &:hover{
+      transform: scale(1.1);
+    }
+    
   }
   img {
     margin-right: 3rem;
@@ -66,6 +72,7 @@ const Project = styled.div`
     height: 35vh;
     object-fit: cover;
   }
+
 
 `;
 
