@@ -9,13 +9,13 @@ const AboutSection = () => {
       <Description>
         <div className="title">
           <Hide>
-            <h2>Hi, I&apos;m Marie.</h2>
+            <h1>Hi, I&apos;m Marie.</h1>
           </Hide>
           <Hide>
-            <h2>I&apos;m a <span>front-end</span></h2>
+            <h1>I&apos;m a <span>front-end</span></h1>
           </Hide>
           <Hide>
-            <h2>web developer.</h2>
+            <h1>web developer.</h1>
           </Hide>
         </div>
         <p>I have a background in hospitality. In other words, <br /> I went to hotel school and returned a programmer.<br />Oops...</p>

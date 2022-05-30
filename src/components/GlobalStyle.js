@@ -1,14 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  html, body, #root, .App {
-    height: 100%;
-  }
-
-  .App {
-    overflow: hidden;
-  }
-
   * {
     margin: 0;
     padding: 0;
@@ -38,9 +30,14 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  h2 {
+  h1 {
     font-weight: lighter;
     font-size: 4rem;
+    font-family: 'Merriweather', serif;
+  }
+
+  h2 {
+    font-size: 2.5rem;
     font-family: 'Merriweather', serif;
   }
   

@@ -6,7 +6,7 @@ import GlobalStyle from './components/GlobalStyle';
 // Import Nav
 import Nav from './components/Nav';
 // Import Pages
-import About from './pages/About';
+import AboutSection from './pages/AboutSection';
 import MyWork from './pages/MyWork';
 import Contact from './pages/Contact';
 
@@ -18,7 +18,7 @@ const App = () => {
       <GlobalStyle />
       <Nav />
       <Routes>
-        <Route exact path="/" element={<About />} />
+        <Route exact path="/" element={<AboutSection />} />
         <Route exact path="/work" element={<MyWork />} />
         <Route exact path="/contact" element={<Contact />} />
       </Routes>
