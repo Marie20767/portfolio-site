@@ -1,10 +1,18 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+  html, body, #root, .App {
+    height: 100%;
+  }
+
+  .App {
+    overflow: hidden;
+  }
+
   * {
     margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   body {
@@ -19,13 +27,13 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.1rem;
     cursor: pointer;
     padding: 1rem 2rem;
-    border: 2px solid #23d997;
+    border: 2px solid #bc5481;
     background-color: transparent;
     color: white;
     transition: all 0.5s ease;
     font-family: 'Mulish', sans-serif;
     &:hover {
-      background-color: #23d997;
+      background-color: #bc5481;
       color: white;
     }
   }
@@ -45,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
 
   span {
     font-weight: bold;
-    color: #23d997
+    color: #384395;
   }
 
   a {
