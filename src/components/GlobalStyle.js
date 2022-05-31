@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-family: 'Merriweather', serif;
   }
   

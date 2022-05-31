@@ -1,43 +1,49 @@
 // Import stlyed components
 import styled from 'styled-components';
+// Import animations
+import { motion } from 'framer-motion';
+import { PageAnimation } from '../animation';
 // Import images
 import placeHolder from '../images/PlaceholderImage.jpeg';
 // TODO:
 // for each portfolio example re-use the same component
-// hover effect: when you hover over the div the image gets larger just to make it clear it's clickable
-// If you click anywhere on the div it brings you to the project site
-// Add tech stack: React. Sass. HTML.
+// Make each project example smaller
+// Put the dot in tech stack in the middle
 
 const MyWork = () => {
   return (
-    <Work>
+    <Work
+      variants={PageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit">
       <Project>
-        <a href="https://www.google.com/">
+        <a href="https://www.google.com/" target="_blank" rel="noreferrer">
           <img src={placeHolder} alt="Marie's Music Player" />
           <ProjectInfo>
             <h2>Music Player App</h2>
             <div className="line" />
-            <p>Tech stack: React. SASS. HTML</p>
+            <p className="tech-stack-text">Tech stack: React. SASS. HTML</p>
           </ProjectInfo>
         </a>
       </Project>
       <Project>
-        <a href="https://www.google.com/">
+        <a href="https://www.google.com/" target="_blank" rel="noreferrer">
           <img src={placeHolder} alt="Marie's Game App" />
           <ProjectInfo>
             <h2>Game App</h2>
             <div className="line" />
-            <p>Tech stack: React. SASS. HTML</p>
+            <p className="tech-stack-text">Tech stack: React. SASS. HTML</p>
           </ProjectInfo>
         </a>
       </Project>
       <Project>
-        <a href="https://www.google.com/">
+        <a href="https://www.google.com/" target="_blank" rel="noreferrer">
           <img src={placeHolder} alt="Marie's Unknown App" />
           <ProjectInfo>
             <h2>Unknown App</h2>
             <div className="line" />
-            <p>Tech stack: React. SASS. HTML</p>
+            <p className="tech-stack-text">Tech stack: React. SASS. HTML</p>
           </ProjectInfo>
         </a>
       </Project>
@@ -45,14 +51,14 @@ const MyWork = () => {
   );
 };
 
-const Work = styled.div`
+const Work = styled(motion.div)`
   min-height: 100vh;
-  margin: 3rem 20rem;
+  margin: 8rem 20rem;
   /* overflow: hidden; */
 `;
 
 const Project = styled.div`
-  padding-bottom: 4rem;
+  padding-bottom: 4.5rem;
   a {
     display: flex;
     align-items: center;
@@ -68,8 +74,8 @@ const Project = styled.div`
   img {
     margin-right: 3rem;
     border-radius: 50%;
-    width: 35vh;
-    height: 35vh;
+    width: 28vh;
+    height: 28vh;
     object-fit: cover;
   }
 
@@ -79,10 +85,16 @@ const Project = styled.div`
 const ProjectInfo = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 28vh;
   .line {
-    height: 0.5rem;
+    height: 0.28rem;
     background-color: #384395;
-    margin-bottom: 3rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
+  }
+  .tech-stack-text {
+    padding: 0;
   }
 `;
 
