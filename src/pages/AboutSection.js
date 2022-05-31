@@ -2,36 +2,34 @@
 import styled from 'styled-components';
 // Import animations
 import { motion } from 'framer-motion';
-import { PageAnimation } from '../animation';
+import { pageAnimation } from '../animation';
+import Wave from '../components/Wave';
 // Import images
 import avatar from '../images/MyAvatar.jpg';
 
+// TODO: create an exit animation for the wave
+
 const AboutSection = () => {
   return (
-    <motion.div variants={PageAnimation} initial="hidden" animate="show" exit="exit">
-      <About>
-        <Description>
-          <motion.div>
-            <Hide>
-              <motion.h1>
-                Hi, I&apos;m Marie.
-              </motion.h1>
-            </Hide>
-            <Hide>
-              <motion.h1>I&apos;m a <span>front-end</span></motion.h1>
-            </Hide>
-            <Hide>
-              <motion.h1>web developer.</motion.h1>
-            </Hide>
-          </motion.div>
-          <p>I have a background in hospitality. In other words, <br /> I went to hotel school and returned a programmer.<br />Oops...</p>
-          <button type="button">View my work</button>
-        </Description>
-        <Image>
-          <img src={avatar} alt="Avatar of Marie" />
-        </Image>
-      </About>
-    </motion.div>
+    <>
+      <Wave />
+      <motion.div variants={pageAnimation} initial="hidden" animate="showAbout" exit="exit">
+        <About>
+          <Description>
+            <motion.div>
+              <h1>Hi, I&apos;m Marie.</h1>
+              <h1>I&apos;m a <span>front-end</span></h1>
+              <h1>web developer.</h1>
+            </motion.div>
+            <p>I have a background in hospitality. In other words, <br /> I went to hotel school and returned a programmer.<br />Oops...</p>
+            <button type="button">View my work</button>
+          </Description>
+          <Image>
+            <img src={avatar} alt="Avatar of Marie" />
+          </Image>
+        </About>
+      </motion.div>
+    </>
   );
 };
 
@@ -49,21 +47,18 @@ const Description = styled.div`
   flex: 1;
   padding-right: 5rem;
   h2 {
-  font-weight: lighter
+    font-weight: lighter
   }
 `;
 
 const Image = styled.div`
   overflow: hidden;
+  z-index: 1;
   img {
     width: 48vh;
     height: 48vh;
     border-radius: 50%;
   }
-`;
-
-const Hide = styled.div`
-  overflow: hidden;
 `;
 
 export default AboutSection;

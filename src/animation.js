@@ -6,13 +6,20 @@ const showAnimation = {
   },
 };
 
-export const PageAnimation = {
+const pageAnimation = {
   hidden: {
     // fade out and slide down
     opacity: 0,
     y: 300,
   },
   show: showAnimation,
+  showAbout: {
+    ...showAnimation,
+    transition: {
+      ...showAnimation.transition,
+      delay: 0.25,
+    },
+  },
   showContact: {
     ...showAnimation,
     backgroundColor: '#fff',
@@ -21,7 +28,9 @@ export const PageAnimation = {
     opacity: 0,
     y: 300,
     transition: {
-      duration: 0.65,
+      duration: 0.5,
     },
   },
 };
+
+export { pageAnimation };
