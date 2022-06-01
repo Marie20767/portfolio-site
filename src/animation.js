@@ -2,7 +2,7 @@ const showAnimation = {
   opacity: 1,
   y: 0,
   transition: {
-    duration: 0.65,
+    duration: 0.55,
   },
 };
 

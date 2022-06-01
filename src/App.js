@@ -13,7 +13,6 @@ import AboutSection from './pages/AboutSection';
 import MyWork from './pages/MyWork';
 import Contact from './pages/Contact';
 
-
 // TODO: media queries for different screens!
 // rename the app in the tab
 // add a logo for the tab?
