@@ -15,7 +15,7 @@ const Nav = () => {
           <Link to="/">About</Link>
           <Line
             transition={{ duration: 0.15 }}
-            initial={{ width: '0%' }}
+            initial={{ width: '35%' }}
             animate={{ width: pathname === '/' ? '35%' : '0%' }} />
         </li>
         <li>
@@ -55,7 +55,6 @@ const StyledNav = styled.nav`
     padding-left: 10rem;
     padding-top: 0.5rem;
     position: relative;
-
   }
 
   a { 
@@ -67,7 +66,6 @@ const StyledNav = styled.nav`
 
 const Line = styled(motion.div)`
   height: 0.3rem;
-  width: 0%;
   position: absolute;
   background-color: #384395;
   bottom: -40%;

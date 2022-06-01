@@ -16,6 +16,7 @@ import Contact from './pages/Contact';
 // TODO: media queries for different screens!
 // rename the app in the tab
 // add a logo for the tab?
+// fix being able to scroll up
 
 const App = () => {
   // For Framermotion to know on which page we are and when there should be animation

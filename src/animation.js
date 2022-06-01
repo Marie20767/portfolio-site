@@ -2,7 +2,7 @@ const showAnimation = {
   opacity: 1,
   y: 0,
   transition: {
-    duration: 0.55,
+    duration: 0.5,
   },
 };
 
@@ -24,7 +24,7 @@ const pageAnimation = {
     opacity: 0,
     y: 300,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
     },
   },
 };
