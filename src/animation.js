@@ -20,10 +20,6 @@ const pageAnimation = {
       delay: 0.25,
     },
   },
-  showContact: {
-    ...showAnimation,
-    backgroundColor: '#fff',
-  },
   exit: {
     opacity: 0,
     y: 300,

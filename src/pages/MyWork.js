@@ -21,6 +21,7 @@ const MyWork = () => {
       {workData.map((project) => {
         return (
           <MyWorkItem
+            key={project.title}
             title={project.title}
             imageAlt={project.imageAlt}
             description={project.description} />

@@ -23,7 +23,9 @@ const StyledNav = styled.nav`
   min-height: 10vh;
   padding: 1rem 6rem;
   background-color: #282828;
-
+  position: sticky;
+  top: 0;
+  z-index: 5;
 
   ul {
     display: flex;

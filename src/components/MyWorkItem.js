@@ -23,7 +23,7 @@ const MyWorkItem = ({
 };
 
 const Project = styled.div`
-  padding-bottom: 4.5rem;
+  padding-bottom: 4.18rem;
   a {
     display: flex;
     align-items: center;

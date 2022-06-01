@@ -6,13 +6,13 @@ import { pageAnimation } from '../animation';
 import Wave from '../components/Wave';
 // Import images
 import avatar from '../images/MyAvatar.jpg';
-
-// TODO: create an exit animation for the wave
+import ScrollTop from '../components/ScrollTop';
 
 const AboutSection = () => {
   return (
     <>
       <Wave />
+      <ScrollTop />
       <motion.div variants={pageAnimation} initial="hidden" animate="showAbout" exit="exit">
         <About>
           <Description>

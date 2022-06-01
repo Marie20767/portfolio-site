@@ -13,7 +13,10 @@ import AboutSection from './pages/AboutSection';
 import MyWork from './pages/MyWork';
 import Contact from './pages/Contact';
 
+
 // TODO: media queries for different screens!
+// rename the app in the tab
+// add a logo for the tab?
 
 const App = () => {
   // For Framermotion to know on which page we are and when there should be animation
@@ -22,6 +25,7 @@ const App = () => {
   return (
     <div className="App">
       <GlobalStyle />
+      {/* Make sure the view starts at the top whenever the page changes */}
       <Nav />
       {/* Wait for the exit animation to finish before the enter animation to start */}
       <AnimatePresence exitBeforeEnter>
