@@ -29,4 +29,16 @@ const pageAnimation = {
   },
 };
 
-export { pageAnimation };
+const contactAnimation = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+export { pageAnimation, contactAnimation };

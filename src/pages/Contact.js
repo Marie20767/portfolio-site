@@ -1,19 +1,87 @@
+// Import useState & useRef
+import { useRef, useState } from 'react';
 // Import styles
 import styled from 'styled-components';
 // Import animations
 import { motion } from 'framer-motion';
-import { pageAnimation } from '../animation';
+import emailjs from '@emailjs/browser';
+import { pageAnimation, contactAnimation } from '../animation';
+// Import email library
 
-// TODO: Make contact form with 2 inputs, 1 textarea and placeholders and 1 submit button
-// tie each field to 1 state
+// TODO:
+// Handle exit animation of 'thanks for your message!'
 
 const Contact = () => {
+  // useStates
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [showFeedbackMessage, setShowFeedbackMessage] = useState(false);
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const [isNameMissing, setIsNameMissing] = useState(false);
+  const [isEmailMissing, setIsEmailMissing] = useState(false);
+  const [isMessageMissing, setIsMessageMissing] = useState(false);
+
+  // Functions
+  // Using the e-mail service library
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    if (name !== '' && email !== '' && message !== '') {
+      emailjs.sendForm('service_xa19syp', 'template_sy3ym1s', form.current, 'M7cFK3UxI15ETlp6h')
+        .then((result) => {
+          console.log(result.text);
+        }, (error) => {
+          console.log(error.text);
+        });
+      setShowFeedbackMessage(true);
+      setName('');
+      setEmail('');
+      setMessage('');
+      setShowErrorMessage(false);
+
+      setTimeout(() => {
+        setShowFeedbackMessage(false);
+      }, 3000);
+    } else {
+      setShowErrorMessage(true);
+      if (name === '') {
+        setIsNameMissing(true);
+      }
+      if (email === '') {
+        setIsEmailMissing(true);
+      }
+      if (message === '') {
+        setIsMessageMissing(true);
+      }
+    }
+  };
+
+  const onChangeNameInput = (e) => {
+    setName(e.target.value);
+    setIsNameMissing(false);
+  };
+
+  const onChangeEmailInput = (e) => {
+    setEmail(e.target.value);
+    setIsEmailMissing(false);
+  };
+
+  const onChangeTextArea = (e) => {
+    setMessage(e.target.value);
+    setIsMessageMissing(false);
+  };
+
   return (
     <ContactStyle
       variants={pageAnimation}
       initial="hidden"
       animate="show"
-      exit="exit">
+      exit="exit"
+      isNameMissing={isNameMissing}
+      isEmailMissing={isEmailMissing}
+      isMessageMissing={isMessageMissing}>
       <header>
         <h1>Get in touch</h1>
         <a href="https://www.linkedin.com/in/marie-impens/" target="_blank" rel="noreferrer">
@@ -41,12 +109,43 @@ const Contact = () => {
         </a>
       </header>
       <p>I am available for Junior React Developer positions.</p>
+      <form ref={form} onSubmit={sendEmail}>
+        <input type="text" name="user_name" placeholder="Full Name" onChange={onChangeNameInput} value={name} />
+        <input type="text" name="user_email" placeholder="E-mail" onChange={onChangeEmailInput} value={email} />
+        <textarea name="message" placeholder="Type your message here..." cols="40" rows="15" onChange={onChangeTextArea} value={message} />
+        <ContactFooter>
+          <button type="submit">Submit</button>
+          {showFeedbackMessage
+            ? (
+              <motion.p
+                variants={contactAnimation}
+                initial="hidden"
+                animate="show">
+                Thanks for your message!
+              </motion.p>
+            )
+            : null
+          }
+          {showErrorMessage
+            ? (
+              <motion.p
+                variants={contactAnimation}
+                initial="hidden"
+                animate="show">
+                Please fill in all required fields.
+              </motion.p>
+            )
+            : null
+          }
+        </ContactFooter>
+
+      </form>
     </ContactStyle>
   );
 };
 
 const ContactStyle = styled(motion.div)`
-  padding: 5rem 10rem;
+  padding: 3.5rem 10rem;
   min-height: 90vh;
   h1 {
     display: flex;
@@ -57,9 +156,59 @@ const ContactStyle = styled(motion.div)`
     display: flex;
     align-items: center;
   }
+  p {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+  }
   svg {
     cursor: pointer;
     margin-left: 18px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    input {
+      width: 85%;
+    }
+    input[name="user_name"] {
+      ${(props) => props.isNameMissing ? 'border: 3px solid #dd3a08' : ''}
+    }
+    input[name="user_email"] {
+      ${(props) => props.isEmailMissing ? 'border: 3px solid #dd3a08' : ''}
+    }
+
+    input, textarea {
+      font-family: 'Mulish', sans-serif;
+      margin-bottom: 1.1rem;
+      padding: 0.7rem;
+      font-size: 1rem;
+      &:focus {
+        border: 3.5px solid #5a66c0;
+        outline: none;
+      }
+    } 
+    textarea {
+      width: 951px;
+      height: 250px;
+      resize: none;
+    }
+    textarea[name="message"] {
+      ${(props) => props.isMessageMissing ? 'border: 3px solid #dd3a08' : ''}
+    }
+  }
+`;
+
+const ContactFooter = styled.div`
+  display: flex;
+  align-items: center;
+  button {
+      width: 10%;
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+  p {
+    font-size: 1rem;
+    padding: 0 0 0 1rem;
   }
 `;
 
