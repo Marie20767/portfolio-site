@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import placeHolder from '../images/PlaceholderImage.jpeg';
 
 const MyWorkItem = ({
+  image,
   title,
   description,
   imageAlt,
@@ -11,7 +12,7 @@ const MyWorkItem = ({
   return (
     <Project>
       <a href="https://www.google.com/" target="_blank" rel="noreferrer">
-        <img src={placeHolder} alt={imageAlt} />
+        <img src={image || placeHolder} alt={imageAlt} />
         <ProjectInfo>
           <h2>{title}</h2>
           <div className="line" />

@@ -22,6 +22,7 @@ const MyWork = () => {
         return (
           <MyWorkItem
             key={project.title}
+            image={project.image}
             title={project.title}
             imageAlt={project.imageAlt}
             description={project.description} />

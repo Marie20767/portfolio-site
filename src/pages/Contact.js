@@ -10,6 +10,7 @@ import { pageAnimation, contactAnimation } from '../animation';
 
 // TODO:
 // Handle exit animation of 'thanks for your message!'
+// Check the error in the console about props
 
 const Contact = () => {
   // useStates

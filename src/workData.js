@@ -1,6 +1,9 @@
+import musicPlayerImage from './images/MusicPlayerApp.png';
+
 const workData = [
   {
     title: 'Music Player App',
+    image: musicPlayerImage,
     imageAlt: 'Screenshot of Marie\'s Music Player App',
     description: 'Tech stack: React. SASS. HTML',
   },
