@@ -1,12 +1,16 @@
 // Import styles
+import React from 'react';
 import styled from 'styled-components';
 // Import images
 import placeHolder from '../images/PlaceholderImage.jpeg';
+import workData from '../workData';
+
+// TODO: if you scroll down on the work page and then refresh the page the animation makes the page go down instead of starting from the top
 
 const MyWorkItem = ({
   image,
   title,
-  description,
+  techStack,
   imageAlt,
 }) => {
   return (
@@ -16,7 +20,20 @@ const MyWorkItem = ({
         <ProjectInfo>
           <h2>{title}</h2>
           <div className="line" />
-          <p className="tech-stack-text">{description}</p>
+
+          <div className="tech-stack-container">
+            {techStack.map((item, index) => {
+              return (
+                <React.Fragment key={item}>
+                  <p className="tech-stack-text">{item}</p>
+                  {index !== workData.length - 1
+                    ? <Circle />
+                    : null
+                  }
+                </React.Fragment>
+              );
+            })}
+          </div>
         </ProjectInfo>
       </a>
     </Project>
@@ -44,8 +61,6 @@ const Project = styled.div`
     height: 28vh;
     object-fit: cover;
   }
-
-
 `;
 
 const ProjectInfo = styled.div`
@@ -59,9 +74,22 @@ const ProjectInfo = styled.div`
     margin-bottom: 0.5rem;
     margin-top: 0.2rem;
   }
+  .tech-stack-container {
+    display: flex;
+    align-items: center;
+  }
   .tech-stack-text {
     padding: 0;
   }
+`;
+
+const Circle = styled.div`
+  width: 4px;
+  height: 4px;
+  line-height: 4px;
+  border-radius: 50%;
+  background: #FFF;
+  margin: 0 7px;
 `;
 
 export default MyWorkItem;

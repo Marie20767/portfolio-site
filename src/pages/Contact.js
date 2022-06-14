@@ -10,7 +10,6 @@ import { pageAnimation, contactAnimation } from '../animation';
 
 // TODO:
 // Handle exit animation of 'thanks for your message!'
-// Check the error in the console about props
 
 const Contact = () => {
   // useStates
@@ -80,9 +79,9 @@ const Contact = () => {
       initial="hidden"
       animate="show"
       exit="exit"
-      isNameMissing={isNameMissing}
-      isEmailMissing={isEmailMissing}
-      isMessageMissing={isMessageMissing}>
+      $isNameMissing={isNameMissing}
+      $isEmailMissing={isEmailMissing}
+      $isMessageMissing={isMessageMissing}>
       <header>
         <h1>Get in touch</h1>
         <a href="https://www.linkedin.com/in/marie-impens/" target="_blank" rel="noreferrer">

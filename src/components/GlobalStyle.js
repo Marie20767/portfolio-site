@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Mulish', sans-serif;
     font-weight: lighter;
     overflow-x: hidden;
+    ${(props) => props.path === '/work' ? '' : 'overflow-y: hidden'}
   }
 
   button {
@@ -55,6 +56,24 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     font-size: 1.1rem;
+  }
+
+  // Tablet
+  @media screen and (min-width: 768px) {
+    // Tablet rules here
+  }
+
+  // Desktop
+  @media screen and (min-width: 1024px) {
+    // Desktop rules here
+  }
+
+  // For landscape oriented tablets
+  @media screen and (min-width: 768px) and (max-height: 700px) {
+  }
+
+  // For landscape oriented mobile
+  @media screen and (max-height: 420px) {
   }
 `;
 

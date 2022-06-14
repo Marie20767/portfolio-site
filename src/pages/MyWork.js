@@ -8,9 +8,6 @@ import MyWorkItem from '../components/MyWorkItem';
 // Import portfolio projects
 import workData from '../workData';
 
-// TODO:
-// Put the dot in tech stack in the middle
-
 const MyWork = () => {
   return (
     <Work
@@ -25,7 +22,7 @@ const MyWork = () => {
             image={project.image}
             title={project.title}
             imageAlt={project.imageAlt}
-            description={project.description} />
+            techStack={project.techStack} />
         );
       })}
     </Work>
