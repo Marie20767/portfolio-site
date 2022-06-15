@@ -23,7 +23,12 @@ const Wave = () => {
 const WaveSvg = styled.svg`
   position: absolute;
   left: 0;
+  top: 45%;
+  /* Media queries */
+   // Desktop
+  @media screen and (min-width: 1024px) {
   top: 28%;
+  }
 `;
 
 export default Wave;

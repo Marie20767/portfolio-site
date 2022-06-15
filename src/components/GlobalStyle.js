@@ -7,19 +7,24 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html, #root, body, .App {
+  @media screen and (max-width: 768px) {
+    height: 93vh;
+  }
+  }
+
   body {
     background-color: #1b1b1b;
     font-family: 'Mulish', sans-serif;
     font-weight: lighter;
     overflow-x: hidden;
-    ${(props) => props.path === '/work' ? '' : 'overflow-y: hidden'}
+    ${(props) => props.path === '/work' ? '' : 'overflow-y: hidden'};
   }
 
   button {
     font-weight: bolder;
-    font-size: 1.1rem;
     cursor: pointer;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     border: 2px solid #bc5481;
     background-color: transparent;
     color: white;
@@ -33,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-weight: lighter;
-    font-size: 4rem;
+    font-size: 220%;
     font-family: 'Merriweather', serif;
   }
 
@@ -41,21 +46,20 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.5rem;
     font-family: 'Merriweather', serif;
   }
-  
+
   p {
-    padding: 3rem 0rem;
     color: #ccc;
-    font-size: 1.4rem;
-    line-height: 150%;
+    font-size: 120%;
   }
 
   span {
     font-weight: bold;
     color: #384395;
+    padding-left: 2%;
   }
 
   a {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 
   // Tablet
@@ -65,7 +69,24 @@ const GlobalStyle = createGlobalStyle`
 
   // Desktop
   @media screen and (min-width: 1024px) {
-    // Desktop rules here
+    h1 {
+      font-size: 4rem;
+    }
+    button {
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
+    }
+    p {
+    padding: 3rem 0rem;
+    font-size: 1.4rem;
+    line-height: 150%;
+    }
+    span {
+    padding: 0%;
+    }
+    a {
+    font-size: 1.1rem;
+    }
   }
 
   // For landscape oriented tablets
