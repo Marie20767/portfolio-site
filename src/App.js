@@ -13,8 +13,6 @@ import AboutSection from './pages/AboutSection';
 import MyWork from './pages/MyWork';
 import Contact from './pages/Contact';
 
-// TODO: media queries for different screens!
-
 const App = () => {
   // For Framermotion to know on which page we are and when there should be animation
   const location = useLocation();
