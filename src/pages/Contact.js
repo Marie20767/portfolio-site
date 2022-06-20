@@ -138,77 +138,146 @@ const Contact = () => {
             : null
           }
         </ContactFooter>
-
       </form>
     </ContactStyle>
   );
 };
 
 const ContactStyle = styled(motion.div)`
-  padding: 3.5rem 10rem;
-  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8%;
+
   h1 {
     display: flex;
-    font-size: 2.5rem;
+    font-size: 4vh;
     color: white;
   }
+
   header {
+    margin-top: 50px;
     display: flex;
     align-items: center;
   }
+  
   p {
+    display: flex;
+    text-align: center;
+    font-size: 2.35vh;
     padding-top: 1rem;
     padding-bottom: 1.5rem;
   }
+
   svg {
     cursor: pointer;
     margin-left: 18px;
   }
+
   form {
     display: flex;
     flex-direction: column;
-    input {
-      width: 85%;
-    }
+    width: 100%;
+
     input[name="user_name"] {
-      ${(props) => props.isNameMissing ? 'border: 3px solid #dd3a08' : ''}
+      ${(props) => props.$isNameMissing ? 'border: 2px solid #dd3a08' : ''}
     }
+
     input[name="user_email"] {
-      ${(props) => props.isEmailMissing ? 'border: 3px solid #dd3a08' : ''}
+      ${(props) => props.$isEmailMissing ? 'border: 2px solid #dd3a08' : ''}
     }
 
     input, textarea {
       font-family: 'Mulish', sans-serif;
       margin-bottom: 1.1rem;
       padding: 0.7rem;
-      font-size: 1rem;
+      font-size: 0.8rem;
       &:focus {
-        border: 3.5px solid #5a66c0;
+        border: 2.5px solid #5a66c0;
         outline: none;
       }
     } 
+
     textarea {
-      width: 951px;
-      height: 250px;
+      height: 150px;
       resize: none;
     }
+
     textarea[name="message"] {
-      ${(props) => props.isMessageMissing ? 'border: 3px solid #dd3a08' : ''}
+      ${(props) => props.$isMessageMissing ? 'border: 2.5px solid #dd3a08' : ''}
     }
   }
+
+ @media screen and (max-height: 420px) {
+
+ }
+
+ @media screen and (min-width: 1024px) {
+  padding: 0;
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+
+  form {
+    width: 951px;
+    
+    input[name="user_name"] {
+      ${(props) => props.$isNameMissing ? 'border: 2.5px solid #dd3a08' : ''}
+    }
+
+    input[name="user_email"] {
+      ${(props) => props.$isEmailMissing ? 'border: 2.5px solid #dd3a08' : ''}
+    }
+
+    input, textarea {
+      font-size: 1.1rem;
+      &:focus {
+        border: 3.5px solid #5a66c0;
+      }
+   }
+    
+    textarea {
+      height: 300px;
+    }
+
+    textarea[name="message"] {
+      ${(props) => props.$isMessageMissing ? 'border: 3px solid #dd3a08' : ''}
+    }
+ 
+ }
+}
 `;
 
 const ContactFooter = styled.div`
   display: flex;
   align-items: center;
   button {
-      width: 10%;
-      padding: 0.7rem;
+      font-size: 0.8rem;
+    }
+
+  p {
+    font-size: 0.8rem;
+    padding: 0 0 0 1rem;
+  }
+
+  @media screen and (max-height: 420px) {
+
+  }
+
+  @media screen and (min-width: 1024px) {
+    p {
       font-size: 1rem;
     }
-  p {
-    font-size: 1rem;
-    padding: 0 0 0 1rem;
+
+    button {
+      font-size: 1.1rem;
+      padding: 0.7rem 1.5rem;
+    }
   }
 `;
 

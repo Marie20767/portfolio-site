@@ -1,3 +1,5 @@
+// Import React Router
+import { Link } from 'react-router-dom';
 // Import styled components
 import styled from 'styled-components';
 // Import animations
@@ -7,10 +9,6 @@ import Wave from '../components/Wave';
 // Import images
 import avatar from '../images/MyAvatar.jpg';
 import ScrollTop from '../components/ScrollTop';
-
-// TODO:
-// Landscape mobile, hide paragraph and have title and pic next to each other
-// Only show button underneath
 
 const AboutSection = () => {
   return (
@@ -22,14 +20,16 @@ const AboutSection = () => {
           <Description>
             <HeaderContainer>
               <h1>Hi, I&apos;m Marie.</h1>
-              <h1>I&apos;m a <span>front-end</span></h1>
+              <h1>I&apos;m a<span>&nbsp;front-end</span></h1>
               <h1>web developer.</h1>
             </HeaderContainer>
             <MobileAndTabletImage>
               <img src={avatar} alt="Avatar of Marie" />
             </MobileAndTabletImage>
             <p>I have a background in hospitality.<br />In other words, I went to hotel school<br />and returned a programmer.<br />Oops...</p>
-            <button type="button">View my work</button>
+            <button type="button">
+              <Link to="/work">View my work</Link>
+            </button>
           </Description>
           <DesktopImage>
             <img src={avatar} alt="Avatar of Marie" />
@@ -45,32 +45,26 @@ const AboutSection = () => {
 const About = styled.div`
   color: white;
   display: flex;
-
-  @media screen and (max-width: 1024px) {
-    height: 93vh;
-  }
-  @media screen and (max-height: 420px) {
-    height: 110vh;
-  }
+  height: 93vh;
 
   @media screen and (min-width: 1024px) {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 5rem 10rem;
+    justify-content: center;
+  }
+
+  @media screen and (max-height: 420px) {
+    display: flex;
+    justify-content: center;
   }
 `;
 
 const HeaderContainer = styled(motion.div)`
-  margin-top: 8%;
+  margin-top: 10%;
 
   h1 {
   display: flex;
   justify-content: center;
-  }
-
-  @media screen and (min-width: 768px) {
-    margin-top: 2%;
   }
 
   @media screen and (min-width: 1024px) {
@@ -79,8 +73,14 @@ const HeaderContainer = styled(motion.div)`
   h1 {
   display: block;
   margin-top: 0%;
+   }
+
   }
-}
+
+  @media screen and (max-height: 420px) {
+    margin-top: 15%;
+    margin-bottom: 13%;
+  }
 `;
 
 const Description = styled.div`
@@ -93,20 +93,24 @@ const Description = styled.div`
 
   @media screen and (max-height: 420px) {
     button {
-      margin-top: 0%
+      margin-top: -5%;
+    }
+    
+    p {
+      display: none;
     }
   }
 
   @media screen and (min-width: 1024px) {
-    padding-right: 5rem;
-    flex: 1;
+    padding-right: 12vw;
+
     button {
-    margin-top: 0%;
-    align-self: flex-start;
+      margin-top: 0%;
+      align-self: flex-start;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     p {
       margin-bottom: 2rem;
       text-align: center;
@@ -125,21 +129,9 @@ const MobileAndTabletImage = styled.div`
     margin: 1.5rem 0;
   }
 
-  @media screen and (min-width: 768px) {
-    img {
-      width: 45%;
-    }
-  }
-
-  @media screen and (min-width: 768px) and (max-height: 900px) {
-    img {
-      width: 30%;
-    }
-  }
-
   @media screen and (max-height: 420px) {
     img {
-      width: 25%;
+      display: none;
     }
   }
 
@@ -161,14 +153,6 @@ const DesktopImage = styled.div`
 
    @media screen and (min-width: 1024px) {
     display: block;
-  }
-
-  // For landscape oriented tablets
-  @media screen and (min-width: 768px) and (max-height: 900px) {
-  }
-
-  // For landscape oriented mobile
-  @media screen and (max-height: 420px) {
   }
 `;
 

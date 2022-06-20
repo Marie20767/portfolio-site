@@ -6,6 +6,7 @@ import placeHolder from '../images/PlaceholderImage.jpeg';
 import workData from '../workData';
 
 // TODO: if you scroll down on the work page and then refresh the page the animation makes the page go down instead of starting from the top
+// TODO: fix issue where you refresh on Contact/Work then it shows the blue line for a split second on About
 
 const MyWorkItem = ({
   image,
@@ -78,13 +79,6 @@ const Project = styled.div`
     }
     p {
       font-size: 1.4rem;
-    }
-  }
-
-  @media screen and (min-width: 768px) and (max-height: 900px) {
-    img {
-      width: 120px;
-      height: 120px;
     }
   }
 
@@ -162,12 +156,6 @@ const Circle = styled.div`
   width: 4px;
   height: 4px;
   line-height: 4px;
-  }
-
-  @media screen and (min-width: 768px) and (max-height: 900px) {
-  width: 3px;
-  height: 3px;
-  line-height: 3px;
   }
 `;
 

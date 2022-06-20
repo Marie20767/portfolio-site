@@ -40,8 +40,7 @@ const Nav = () => {
 };
 
 const StyledNav = styled.nav`
-  /* TODO: do the height in px because it looks too thin on Iphone */
-  min-height: 7vh;
+  min-height: 60px;
   background-color: #282828;
   position: sticky;
   top: 0;
@@ -67,11 +66,7 @@ const StyledNav = styled.nav`
     font-weight: bolder;
   }
   
-  // For landscape oriented mobile
-  @media screen and (max-height: 420px) {
-    min-height: 10vh;
-  }
-
+  
   @media screen and (min-width: 1024px) {
     justify-content: flex-end;
     padding: 1rem 6rem;
@@ -85,6 +80,10 @@ const StyledNav = styled.nav`
     li {
        margin-left: 10rem;
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    min-height: 10vh;
   }
 `;
 

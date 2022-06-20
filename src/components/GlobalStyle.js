@@ -7,18 +7,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  html, #root, body, .App {
-    /* @media screen and (max-width: 1024px) {
-      height: 93vh;
-    }
-    @media screen and (max-height: 420px) {
-      height: 110vh;
-    }
-    @media screen and (min-width: 768px) and (max-height: 900px) {
-      height: 105vh;
-    } */
-  }
-
   body {
     background-color: #1b1b1b;
     font-family: 'Mulish', sans-serif;
@@ -46,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-weight: lighter;
-    font-size: 1.8rem;
+    font-size: 3.5vh;
     font-family: 'Merriweather', serif;
   }
 
@@ -62,11 +50,12 @@ const GlobalStyle = createGlobalStyle`
   span {
     font-weight: bold;
     color: #384395;
-    padding-left: 2%;
   }
 
   a {
     font-size: 0.9rem;
+    text-decoration: none;
+    color: white;
   }
 
   /* For phones with taller screens */
@@ -96,29 +85,9 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  // For landscape oriented tablets
-  @media screen and (min-width: 768px) and (max-height: 900px) {
-    body {
-      overflow-y: scroll;
-    }
-    h1 {
-      font-size: 2.5rem;
-    }
-    h2 {
-      font-size: 1.3rem;
-    }
-    a {
-      font-size: 1.1rem;
-    }
-    button {
-      font-size: 1rem;
-      padding: 0.7rem 1rem;
-    }
-  }
-
   @media screen and (min-width: 1024px) {
     h1 {
-      font-size: 4rem;
+      font-size: 3rem;
     }
     h2 {
     font-size: 1.6rem;
@@ -128,28 +97,25 @@ const GlobalStyle = createGlobalStyle`
       padding: 1rem 2rem;
     }
     p {
-    padding: 3rem 0rem;
-    font-size: 1.4rem;
-    line-height: 150%;
-    }
-    span {
-    padding: 0%;
+      padding: 3rem 0rem;
+      font-size: 1.4rem;
+      line-height: 150%;
     }
     a {
-    font-size: 1.1rem;
+      font-size: 1.1rem;
     }
   }
 
   // For landscape oriented mobile
   @media screen and (max-height: 420px) {
-    body {
-      overflow-y: scroll;
-    }
     h1 {
-      font-size: 170%;
+      font-size: 2.3rem;
     }
     p {
       font-size: 1rem;
+    }
+    button {
+      font-size: 3.5vh;
     }
     a {
       font-size: 0.9rem;
