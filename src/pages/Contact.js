@@ -9,11 +9,7 @@ import { pageAnimation, contactAnimation } from '../animation';
 // Import email library
 
 // TODO:
-// Handle exit animation of 'thanks for your message!'
-
-// TODO:
-// Mobile landscape styling
-// Tablet styling
+// Maybe: Handle exit animation of 'thanks for your message!'
 
 const Contact = () => {
   // useStates
@@ -254,29 +250,28 @@ const ContactStyle = styled(motion.div)`
   form {
     width: 951px;
     
+    textarea {
+      height: 300px;
+    }
+    
     input[name="user_name"] {
-      ${(props) => props.$isNameMissing ? 'border: 2.5px solid #dd3a08' : ''}
+      ${(props) => props.$isNameMissing ? 'border: 2px solid #dd3a08' : ''}
     }
 
     input[name="user_email"] {
-      ${(props) => props.$isEmailMissing ? 'border: 2.5px solid #dd3a08' : ''}
+      ${(props) => props.$isEmailMissing ? 'border: 2px solid #dd3a08' : ''}
+    }
+
+    textarea[name="message"] {
+      ${(props) => props.$isMessageMissing ? 'border: 2px solid #dd3a08' : ''}
     }
 
     input, textarea {
       font-size: 1.1rem;
       &:focus {
-        border: 3.5px solid #5a66c0;
+        border: 2.5px solid #5a66c0;
       }
     }
-    
-    textarea {
-      height: 300px;
-    }
-
-    textarea[name="message"] {
-      ${(props) => props.$isMessageMissing ? 'border: 3px solid #dd3a08' : ''}
-    }
- 
  }
 }
 `;
