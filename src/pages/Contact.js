@@ -188,6 +188,10 @@ const ContactStyle = styled(motion.div)`
       ${(props) => props.$isEmailMissing ? 'border: 2px solid #dd3a08' : ''}
     }
 
+    textarea[name="message"] {
+      ${(props) => props.$isMessageMissing ? 'border: 2.5px solid #dd3a08' : ''}
+    }
+
     input, textarea {
       font-family: 'Mulish', sans-serif;
       margin-bottom: 1.1rem;
@@ -202,10 +206,6 @@ const ContactStyle = styled(motion.div)`
     textarea {
       height: 150px;
       resize: none;
-    }
-
-    textarea[name="message"] {
-      ${(props) => props.$isMessageMissing ? 'border: 2.5px solid #dd3a08' : ''}
     }
   }
 

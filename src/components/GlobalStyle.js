@@ -121,12 +121,6 @@ const GlobalStyle = createGlobalStyle`
       font-size: 0.9rem;
     }
   }
-
-  @media(hover: hover) and (pointer: fine) {
-      nav a:hover {
-          background: yellow;
-      }
-  }
 `;
 
 export default GlobalStyle;
