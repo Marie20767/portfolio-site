@@ -7,6 +7,7 @@ import workData from '../workData';
 
 // TODO: if you scroll down on the work page and then refresh the page the animation makes the page go down instead of starting from the top
 // TODO: fix issue where you refresh on Contact/Work then it shows the blue line for a split second on About
+// TODO: fix button hover issue (stays pink after clicking)
 
 const MyWorkItem = ({
   image,

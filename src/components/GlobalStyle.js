@@ -122,11 +122,10 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  // For portrait oriented mobile
-  @media screen and (max-width: 420px) {
-    body {
-      overflow-y: hidden;
-    }
+  @media(hover: hover) and (pointer: fine) {
+      nav a:hover {
+          background: yellow;
+      }
   }
 `;
 

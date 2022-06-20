@@ -11,6 +11,10 @@ import { pageAnimation, contactAnimation } from '../animation';
 // TODO:
 // Handle exit animation of 'thanks for your message!'
 
+// TODO:
+// Mobile landscape styling
+// Tablet styling
+
 const Contact = () => {
   // useStates
   const [name, setName] = useState('');
@@ -108,7 +112,7 @@ const Contact = () => {
           </svg>
         </a>
       </header>
-      <p>I am available for Junior React Developer positions.</p>
+      <p className="contact-description">I am available for Junior React Developer positions.</p>
       <form ref={form} onSubmit={sendEmail}>
         <input type="text" name="user_name" placeholder="Full Name" onChange={onChangeNameInput} value={name} />
         <input type="text" name="user_email" placeholder="E-mail" onChange={onChangeEmailInput} value={email} />
@@ -156,7 +160,8 @@ const ContactStyle = styled(motion.div)`
   }
 
   header {
-    margin-top: 50px;
+    margin-top: 40px;
+    margin-bottom: 0;
     display: flex;
     align-items: center;
   }
@@ -209,6 +214,29 @@ const ContactStyle = styled(motion.div)`
   }
 
  @media screen and (max-height: 420px) {
+    h1 {
+      font-size: 6vh;
+    }
+    header {
+      margin-top: 20px;
+      margin-bottom: 15px;
+    }
+
+    .contact-description {
+      display: none;
+    }
+
+    form {
+      input, textarea {
+        margin-bottom: 0.6rem;
+        padding: 0.3rem;
+        font-size: 0.8rem;
+      }
+
+      textarea {
+        height: 70px;
+      }
+    }
 
  }
 
@@ -239,7 +267,7 @@ const ContactStyle = styled(motion.div)`
       &:focus {
         border: 3.5px solid #5a66c0;
       }
-   }
+    }
     
     textarea {
       height: 300px;
@@ -256,6 +284,7 @@ const ContactStyle = styled(motion.div)`
 const ContactFooter = styled.div`
   display: flex;
   align-items: center;
+
   button {
       font-size: 0.8rem;
     }
@@ -266,7 +295,9 @@ const ContactFooter = styled.div`
   }
 
   @media screen and (max-height: 420px) {
-
+    button {
+      padding: 0.4rem 1.2rem
+    }
   }
 
   @media screen and (min-width: 1024px) {
