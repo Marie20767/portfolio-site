@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Mulish', sans-serif;
     font-weight: lighter;
     overflow-x: hidden;
-    ${(props) => props.path === '/work' ? '' : 'overflow-y: hidden'};
+    overflow-y: hidden;
   }
 
   button {
@@ -25,11 +25,8 @@ const GlobalStyle = createGlobalStyle`
     transition: all 0.5s ease;
     font-family: 'Mulish', sans-serif;
     font-size: 1rem;
-
-    &:hover {
-      background-color: #bc5481;
-      color: white;
-    }
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1 {
@@ -119,6 +116,14 @@ const GlobalStyle = createGlobalStyle`
     }
     a {
       font-size: 0.9rem;
+    }
+  }
+
+  // Ensures that the hover effect is only active for desktop displays
+  @media(hover: hover) and (pointer: fine) {
+    button:hover {
+      background-color: #bc5481;
+      color: white;
     }
   }
 `;

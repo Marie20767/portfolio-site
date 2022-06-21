@@ -1,15 +1,16 @@
 // Import useState & useRef
 import { useRef, useState } from 'react';
+
+// Import email library
+import emailjs from '@emailjs/browser';
+
 // Import styles
 import styled from 'styled-components';
+
 // Import animations
 import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
 import { pageAnimation, contactAnimation } from '../animation';
-// Import email library
-
-// TODO:
-// Maybe: Handle exit animation of 'thanks for your message!'
+import Button from '../components/Button';
 
 const Contact = () => {
   // useStates
@@ -114,7 +115,7 @@ const Contact = () => {
         <input type="text" name="user_email" placeholder="E-mail" onChange={onChangeEmailInput} value={email} />
         <textarea name="message" placeholder="Type your message here..." cols="40" rows="15" onChange={onChangeTextArea} value={message} />
         <ContactFooter>
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
           {showFeedbackMessage
             ? (
               <motion.p
@@ -281,8 +282,8 @@ const ContactFooter = styled.div`
   align-items: center;
 
   button {
-      font-size: 0.8rem;
-    }
+    font-size: 0.8rem;
+  }
 
   p {
     font-size: 0.8rem;

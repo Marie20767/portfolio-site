@@ -4,11 +4,20 @@ import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 // Import animations
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const lineWidth = '130%';
 
 const Nav = () => {
   const { pathname } = useLocation();
+  const [hasLoadedFirstTime, setHasLoadedFirstTime] = useState(false);
+
+  useEffect(() => {
+    setHasLoadedFirstTime(true);
+  }, []);
+
+  // Add a delay only for the first time the page loads, otherwise the animation is too fast
+  const delay = hasLoadedFirstTime ? 0 : 0.45;
 
   return (
     <StyledNav>
@@ -16,21 +25,21 @@ const Nav = () => {
         <li>
           <Link to="/">About</Link>
           <Line
-            transition={{ duration: 0.15 }}
-            initial={{ width: lineWidth }}
+            transition={{ duration: 0.15, delay }}
+            initial={{ width: '0%' }}
             animate={{ width: pathname === '/' ? lineWidth : '0%' }} />
         </li>
         <li>
           <Link to="/work">Work</Link>
           <Line
-            transition={{ duration: 0.15 }}
+            transition={{ duration: 0.15, delay }}
             initial={{ width: '0%' }}
             animate={{ width: pathname === '/work' ? lineWidth : '0%' }} />
         </li>
         <li>
           <Link to="/contact">Contact</Link>
           <Line
-            transition={{ duration: 0.15 }}
+            transition={{ duration: 0.15, delay }}
             initial={{ width: '0%' }}
             animate={{ width: pathname === '/contact' ? lineWidth : '0%' }} />
         </li>
@@ -42,9 +51,6 @@ const Nav = () => {
 const StyledNav = styled.nav`
   min-height: 60px;
   background-color: #282828;
-  position: sticky;
-  top: 0;
-  z-index: 5;
   display: flex;
   align-items: center;
 

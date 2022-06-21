@@ -9,6 +9,7 @@ import Wave from '../components/Wave';
 // Import images
 import avatar from '../images/MyAvatar.jpg';
 import ScrollTop from '../components/ScrollTop';
+import Button from '../components/Button';
 
 const AboutSection = () => {
   return (
@@ -27,9 +28,9 @@ const AboutSection = () => {
               <img src={avatar} alt="Avatar of Marie" />
             </MobileAndTabletImage>
             <p>I have a background in hospitality.<br />In other words, I went to hotel school<br />and returned a programmer.<br />Oops...</p>
-            <button type="button">
+            <Button>
               <Link to="/work">View my work</Link>
-            </button>
+            </Button>
           </Description>
           <DesktopImage>
             <img src={avatar} alt="Avatar of Marie" />

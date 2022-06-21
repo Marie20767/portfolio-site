@@ -30,18 +30,14 @@ const MyWork = () => {
 };
 
 const Work = styled(motion.div)`
-  min-height: 93vh;
+  height: 93vh;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 
   @media screen and (max-width: 1024px) {
     padding-top: 10%;
-  }
-
-  @media screen and (min-width: 1024px) {
-    min-height: 100vh;
-  }
- 
+  } 
 `;
 
 export default MyWork;

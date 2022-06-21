@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <GlobalStyle path={location.pathname} />
+      <GlobalStyle />
       {/* Make sure the view starts at the top whenever the page changes */}
       <Nav />
       {/* Wait for the exit animation to finish before the enter animation to start */}
