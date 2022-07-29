@@ -71,12 +71,15 @@ const StyledNav = styled.nav`
     text-decoration: none;
     font-weight: bolder;
   }
-  
+
+  @media screen and (min-width: 768px) {
+    min-height: 10vh;
+  }
   
   @media screen and (min-width: 1024px) {
     justify-content: flex-end;
     padding: 1rem 6rem;
-    min-height: 10vh;
+    min-height: 80px;
     ul {
       flex: 0;
     }
@@ -88,9 +91,6 @@ const StyledNav = styled.nav`
     }
   }
 
-  @media screen and (min-width: 768px) {
-    min-height: 10vh;
-  }
 `;
 
 const Line = styled(motion.div)`

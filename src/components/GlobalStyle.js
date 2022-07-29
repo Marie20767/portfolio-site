@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     padding: 0.5rem 1rem;
     border: 2px solid #bc5481;
-    background-color: transparent;
+    background-color: #1b1b1b;;
     color: white;
     transition: all 0.5s ease;
     font-family: 'Mulish', sans-serif;
@@ -84,7 +84,7 @@ const GlobalStyle = createGlobalStyle`
 
   @media screen and (min-width: 1024px) {
     h1 {
-      font-size: 3rem;
+      font-size: 55px;
     }
     h2 {
     font-size: 1.6rem;
@@ -95,11 +95,11 @@ const GlobalStyle = createGlobalStyle`
     }
     p {
       padding: 3rem 0rem;
-      font-size: 1.4rem;
+      font-size: 25px;
       line-height: 150%;
     }
     a {
-      font-size: 1.1rem;
+      font-size: 20px;
     }
   }
 

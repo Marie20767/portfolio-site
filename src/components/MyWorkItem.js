@@ -3,10 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 // Import images
 import placeHolder from '../images/PlaceholderImage.jpeg';
-import workData from '../workData';
-
-// TODO: make a line on the Work page to indicate that it scrolls (also maybe change scrollbar colour
-// if possible)
 
 const MyWorkItem = ({
   image,
@@ -26,7 +22,7 @@ const MyWorkItem = ({
               return (
                 <React.Fragment key={item}>
                   <p className="tech-stack-text">{item}</p>
-                  {index !== workData.length - 1
+                  {index !== techStack.length - 1
                     ? <Circle />
                     : null
                   }

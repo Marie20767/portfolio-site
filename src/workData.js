@@ -1,16 +1,18 @@
-import musicPlayerImage from './images/MusicPlayerApp.png';
+import MusicPlayerImage from './images/MusicPlayerApp.png';
+import MasterMindGameImage from './images/MastermindGameApp.png';
 
 const workData = [
   {
     title: 'Music Player App',
-    image: musicPlayerImage,
+    image: MusicPlayerImage,
     imageAlt: 'Screenshot of Marie\'s Music Player App',
-    techStack: ['React', 'SASS', 'HTML'],
+    techStack: ['React', 'SASS'],
   },
   {
     title: 'Game App',
+    image: MasterMindGameImage,
     imageAlt: 'Screenshot of Marie\'s Game App',
-    techStack: ['React', 'SASS', 'HTML'],
+    techStack: ['React', 'Typescript', 'Styled-Components'],
   },
   {
     title: 'Unknown App',

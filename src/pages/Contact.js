@@ -10,6 +10,8 @@ import styled from 'styled-components';
 // Import animations
 import { motion } from 'framer-motion';
 import { pageAnimation, contactAnimation } from '../animation';
+
+
 import Button from '../components/Button';
 
 const Contact = () => {
