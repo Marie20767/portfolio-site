@@ -15,14 +15,15 @@ const MyWork = () => {
       initial="hidden"
       animate="show"
       exit="exit">
-      {workData.map((project) => {
+      {workData.map((project, index) => {
         return (
           <MyWorkItem
             key={project.title}
             image={project.image}
             title={project.title}
             imageAlt={project.imageAlt}
-            techStack={project.techStack} />
+            techStack={project.techStack}
+            isLast={index === workData.length - 1} />
         );
       })}
     </Work>

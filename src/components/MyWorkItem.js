@@ -9,14 +9,20 @@ const MyWorkItem = ({
   title,
   techStack,
   imageAlt,
+  isLast,
 }) => {
   return (
     <Project>
       <a href="https://www.google.com/" target="_blank" rel="noreferrer">
-        <img src={image || placeHolder} alt={imageAlt} />
+        <div className="image-container">
+          <img src={image || placeHolder} alt={imageAlt} />
+          {isLast ? null : <div className="scroll-indicator" />}
+        </div>
         <ProjectInfo>
-          <h2>{title}</h2>
-          <div className="line" />
+          <div className="title-container">
+            <h2>{title}</h2>
+            <div className="line" />
+          </div>
           <div className="tech-stack-container">
             {techStack.map((item, index) => {
               return (
@@ -45,36 +51,65 @@ const Project = styled.div`
   a {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;
+    justify-content: flex-start;
+    width: 280px;
     text-decoration: none;
     color: white;
-    transition: all .3s ease-in-out;
 
-    &:hover{
-      transform: scale(1.1);
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
     }
-    
   }
+
   img {
-    margin-right: 5%;
     border-radius: 50%;
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
+    transition: all .2s ease-in-out;
   }
 
   p {
     font-size: 0.9rem;
   }
 
+  .image-container {
+    position: relative;
+    margin-right: 20px;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    left: 50px;
+    bottom: 25px;
+    transform: rotate(90deg);
+    transform-origin: left;
+    height: 3px;
+    width: 120px;
+    background-color: #bc5481;
+    z-index: -1;
+  }
+
   @media screen and (min-width: 768px) {
     img {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
     }
+
+    .scroll-indicator {
+      left: 90px;
+      width: 200px;
+      height: 5px;
+    }
+
     p {
       font-size: 1.4rem;
+    }
+
+    a {
+      width: 700px;
     }
   }
 
@@ -82,6 +117,10 @@ const Project = styled.div`
     img {
       width: 80px;
       height: 80px;
+    }
+
+    .scroll-indicator {
+      left: 40px;
     }
   }
 
@@ -92,11 +131,17 @@ const Project = styled.div`
   @media screen and (min-width: 1024px) {
     margin-bottom: 4.18rem;
     margin-top: 4rem;
+
     img {
       margin-right: 3rem;
       width: 28vh;
       height: 28vh;
     }
+
+    .scroll-indicator {
+      left: 14vh;
+    }
+
     p {
       font-size: 1.4rem;
     }
@@ -108,16 +153,22 @@ const ProjectInfo = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  .title-container {
+    align-self: flex-start;
+  }
+
   .line {
     height: 0.18rem;
     background-color: #384395;
-    margin-bottom: 0.5rem;
-    margin-top: 0.2rem;
+    margin: 0.2rem 0;
   }
+
   .tech-stack-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
   }
+
   .tech-stack-text {
     padding: 0;
   }
@@ -130,6 +181,10 @@ const ProjectInfo = styled.div`
   @media screen and (min-width: 768px) {
     .line {
       height: 0.23rem;
+    }
+    .tech-stack-container {
+      flex-direction: row;
+      align-items: center;
     }
   }
 
@@ -147,11 +202,13 @@ const Circle = styled.div`
   height: 2px;
   line-height: 2px;
   border-radius: 50%;
+  display: none;
 
   @media screen and (min-width: 768px) {
-  width: 4px;
-  height: 4px;
-  line-height: 4px;
+    display: block;
+    width: 4px;
+    height: 4px;
+    line-height: 4px;
   }
 `;
 
