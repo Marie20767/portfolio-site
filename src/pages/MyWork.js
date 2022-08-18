@@ -23,6 +23,7 @@ const MyWork = () => {
             title={project.title}
             imageAlt={project.imageAlt}
             techStack={project.techStack}
+            url={project.url}
             isLast={index === workData.length - 1} />
         );
       })}

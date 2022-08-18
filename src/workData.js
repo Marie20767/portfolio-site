@@ -7,17 +7,20 @@ const workData = [
     image: MusicPlayerImage,
     imageAlt: 'Screenshot of Marie\'s Music Player App',
     techStack: ['React', 'SASS'],
+    url: 'https://marie-music-player.pages.dev/',
   },
   {
-    title: 'Game App',
+    title: 'Mastermind Game',
     image: MasterMindGameImage,
-    imageAlt: 'Screenshot of Marie\'s Game App',
+    imageAlt: 'Screenshot of Marie\'s Mastermind Game',
     techStack: ['React', 'Typescript', 'Styled-Components'],
+    url: 'https://marie-mastermind.pages.dev/',
   },
   {
-    title: 'Unknown App',
-    imageAlt: 'Screenshot of Marie\'s Unknown App',
-    techStack: ['React', 'SASS', 'HTML'],
+    title: 'Messaging App (In Progress)',
+    imageAlt: 'Screenshot of Marie\'s Messaging App',
+    techStack: ['React', 'Styled-Components'],
+    url: null,
   },
 ];
 

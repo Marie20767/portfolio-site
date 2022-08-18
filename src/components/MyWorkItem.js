@@ -8,12 +8,13 @@ const MyWorkItem = ({
   image,
   title,
   techStack,
+  url,
   imageAlt,
   isLast,
 }) => {
   return (
     <Project>
-      <a href="https://www.google.com/" target="_blank" rel="noreferrer">
+      <a href={url} target="_blank" rel="noreferrer">
         <div className="image-container">
           <img src={image || placeHolder} alt={imageAlt} />
           {isLast ? null : <div className="scroll-indicator" />}
