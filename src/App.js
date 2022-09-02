@@ -13,8 +13,6 @@ import AboutSection from './pages/AboutSection';
 import MyWork from './pages/MyWork';
 import Contact from './pages/Contact';
 
-// TODO: link the projects in work to respective cloudflare site
-
 const App = () => {
   // For Framermotion to know on which page we are and when there should be animation
   const location = useLocation();

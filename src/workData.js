@@ -1,5 +1,6 @@
 import MusicPlayerImage from './images/MusicPlayerApp.png';
 import MasterMindGameImage from './images/MastermindGameApp.png';
+import MessagingApp from './images/MessagingApp.png';
 
 const workData = [
   {
@@ -8,6 +9,7 @@ const workData = [
     imageAlt: 'Screenshot of Marie\'s Music Player App',
     techStack: ['React', 'SASS'],
     url: 'https://marie-music-player.pages.dev/',
+    githubLink: 'https://github.com/Marie20767/music-player-app',
   },
   {
     title: 'Mastermind Game',
@@ -15,12 +17,15 @@ const workData = [
     imageAlt: 'Screenshot of Marie\'s Mastermind Game',
     techStack: ['React', 'Typescript', 'Styled-Components'],
     url: 'https://marie-mastermind.pages.dev/',
+    githubLink: 'https://github.com/Marie20767/mastermind-game',
   },
   {
-    title: 'Messaging App (In Progress)',
-    imageAlt: 'Screenshot of Marie\'s Messaging App',
-    techStack: ['React', 'Styled-Components'],
+    title: 'Messaging App',
+    image: MessagingApp,
+    imageAlt: 'Messaging Symbol',
+    techStack: ['React', 'NodeJS', 'Express', 'PostgreSQL'],
     url: null,
+    githubLink: 'https://github.com/Marie20767/messaging-app',
   },
 ];
 

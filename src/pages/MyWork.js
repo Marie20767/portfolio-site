@@ -24,6 +24,7 @@ const MyWork = () => {
             imageAlt={project.imageAlt}
             techStack={project.techStack}
             url={project.url}
+            githubLink={project.githubLink}
             isLast={index === workData.length - 1} />
         );
       })}
