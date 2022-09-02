@@ -1,5 +1,8 @@
 # React Portfolio site by Marie Impens
 
+Portfolio site showing various React projects I have been working on in 2022.
+You can see the site here: https://marie-portfolio.pages.dev/
+
 ## Available Scripts
 
 In the project directory, you can run:
