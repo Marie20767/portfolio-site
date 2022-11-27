@@ -24,7 +24,7 @@ const workData = [
     image: MessagingApp,
     imageAlt: 'Messaging Symbol',
     techStack: ['React', 'NodeJS', 'Express', 'PostgreSQL', 'Socket.io'],
-    url: null,
+    url: 'https://messaging-app.pages.dev',
     githubLink: 'https://github.com/Marie20767/messaging-app',
   },
 ];
