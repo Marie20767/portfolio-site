@@ -16,17 +16,17 @@ const Button = ({ children, type = 'button' }) => {
   };
 
   return (
-    <ButtonStyle
+    <StyledButton
       onTouchStart={onButtonTouchStart}
       onTouchEnd={onButtonTouchEnd}
       $isButtonActive={isButtonActive}
       type={type}>
       {children}
-    </ButtonStyle>
+    </StyledButton>
   );
 };
 
-const ButtonStyle = styled.button`
+const StyledButton = styled.button`
   ${(props) => props.$isButtonActive ? 'background-color: #bc5481' : ''}
 `;
 

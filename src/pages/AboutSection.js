@@ -68,6 +68,10 @@ const HeaderContainer = styled(motion.div)`
   justify-content: center;
   }
 
+  @media screen and (min-width: 768px) {
+    margin-top: 5%;
+  }
+
   @media screen and (min-width: 1024px) {
   margin-top: 0%;
 
@@ -133,6 +137,12 @@ const MobileAndTabletImage = styled.div`
   @media screen and (max-height: 420px) {
     img {
       display: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    img {
+      width: 25%;
     }
   }
 

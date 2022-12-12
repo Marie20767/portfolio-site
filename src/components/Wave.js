@@ -26,6 +26,10 @@ const WaveSvg = styled.svg`
   z-index: -1;
   stroke-width: 12px;
 
+  @media screen and (min-width: 768px) {
+    top: 25%;
+  }
+
   @media screen and (min-width: 1024px) {
     top: 23%;
     stroke-width: 5px;

@@ -15,7 +15,7 @@ const workData = [
     title: 'Mastermind Game',
     image: MasterMindGameImage,
     imageAlt: 'Screenshot of Marie\'s Mastermind Game',
-    techStack: ['React', 'Typescript', 'Jest'],
+    techStack: ['React', 'Typescript', 'Jest', 'Cypress'],
     url: 'https://marie-mastermind.pages.dev/',
     githubLink: 'https://github.com/Marie20767/mastermind-game',
   },

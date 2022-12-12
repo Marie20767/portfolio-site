@@ -153,7 +153,7 @@ const ContactStyle = styled(motion.div)`
 
   h1 {
     display: flex;
-    font-size: 4vh;
+    font-size: 3.5vh;
     color: white;
   }
 

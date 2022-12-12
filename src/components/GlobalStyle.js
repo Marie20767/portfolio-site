@@ -64,18 +64,17 @@ const GlobalStyle = createGlobalStyle`
 
   @media screen and (min-width: 768px) {
     h1 {
-      font-size: 3.5rem;
+      font-size: 35px;
     }
     h2 {
       font-size: 1.7rem;
     }
     p {
-      font-size: 2rem;
+      font-size: 20px;
       line-height: 150%;
     }
     button {
-      font-size: 1.6rem;
-      padding: 1rem 2rem;
+      padding: 10px 20px;
     }
     a {
       font-size: 1.5rem;
