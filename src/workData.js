@@ -7,7 +7,7 @@ const workData = [
     title: 'Music Player App',
     image: MusicPlayerImage,
     imageAlt: 'Screenshot of Marie\'s Music Player App',
-    techStack: ['React', 'SASS'],
+    techStack: ['React', 'SASS', 'Redux'],
     url: 'https://marie-music-player.pages.dev/',
     githubLink: 'https://github.com/Marie20767/music-player-app',
   },
