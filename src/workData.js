@@ -4,12 +4,12 @@ import MessagingApp from './images/MessagingApp.png';
 
 const workData = [
   {
-    title: 'Music Player App',
-    image: MusicPlayerImage,
-    imageAlt: 'Screenshot of Marie\'s Music Player App',
-    techStack: ['React', 'SASS', 'Redux'],
-    url: 'https://marie-music-player.pages.dev/',
-    githubLink: 'https://github.com/Marie20767/music-player-app',
+    title: 'Messaging App',
+    image: MessagingApp,
+    imageAlt: 'Messaging Symbol',
+    techStack: ['React', 'NodeJS', 'Express', 'PostgreSQL', 'Socket.io'],
+    url: 'https://messaging-app.pages.dev',
+    githubLink: 'https://github.com/Marie20767/messaging-app',
   },
   {
     title: 'Mastermind Game',
@@ -20,12 +20,12 @@ const workData = [
     githubLink: 'https://github.com/Marie20767/mastermind-game',
   },
   {
-    title: 'Messaging App',
-    image: MessagingApp,
-    imageAlt: 'Messaging Symbol',
-    techStack: ['React', 'NodeJS', 'Express', 'PostgreSQL', 'Socket.io'],
-    url: 'https://messaging-app.pages.dev',
-    githubLink: 'https://github.com/Marie20767/messaging-app',
+    title: 'Music Player App',
+    image: MusicPlayerImage,
+    imageAlt: 'Screenshot of Marie\'s Music Player App',
+    techStack: ['React', 'SASS', 'Redux'],
+    url: 'https://marie-music-player.pages.dev/',
+    githubLink: 'https://github.com/Marie20767/music-player-app',
   },
 ];
 
