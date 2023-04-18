@@ -27,7 +27,7 @@ const AboutSection = () => {
             <MobileAndTabletImage>
               <img src={avatar} alt="Avatar of Marie" />
             </MobileAndTabletImage>
-            <p>I have 1 year of experience working<br />as a Freelance React Developer <br /> and on my personal projects.</p>
+            <p>I have 1 year of experience working<br />at a web development agency <br /> and on my personal projects.</p>
             <Button>
               <Link to="/work">View my work</Link>
             </Button>
