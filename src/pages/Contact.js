@@ -19,7 +19,7 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [showFeedbackMessage, setShowFeedbackMessage] = useState(false);
-  const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const [error, setError] = useState('');
   const [isNameMissing, setIsNameMissing] = useState(false);
   const [isEmailMissing, setIsEmailMissing] = useState(false);
   const [isMessageMissing, setIsMessageMissing] = useState(false);
@@ -34,20 +34,22 @@ const Contact = () => {
       emailjs.sendForm('service_xa19syp', 'template_sy3ym1s', form.current, 'M7cFK3UxI15ETlp6h')
         .then((result) => {
           console.log(result.text);
-        }, (error) => {
-          console.log(error.text);
-        });
-      setShowFeedbackMessage(true);
-      setName('');
-      setEmail('');
-      setMessage('');
-      setShowErrorMessage(false);
 
-      setTimeout(() => {
-        setShowFeedbackMessage(false);
-      }, 3000);
+          setShowFeedbackMessage(true);
+          setError('');
+          setName('');
+          setEmail('');
+          setMessage('');
+
+          setTimeout(() => {
+            setShowFeedbackMessage(false);
+          }, 3000);
+        }, (err) => {
+          console.log(err.text);
+          setError('Failed to send message. Try again.');
+        });
     } else {
-      setShowErrorMessage(true);
+      setError('Please fill in all required fields.');
       if (name === '') {
         setIsNameMissing(true);
       }
@@ -128,13 +130,13 @@ const Contact = () => {
             )
             : null
           }
-          {showErrorMessage
+          {error
             ? (
               <motion.p
                 variants={contactAnimation}
                 initial="hidden"
                 animate="show">
-                Please fill in all required fields.
+                {error}
               </motion.p>
             )
             : null
