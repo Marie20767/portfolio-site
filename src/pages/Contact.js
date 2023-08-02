@@ -31,12 +31,13 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     if (name !== '' && email !== '' && message !== '') {
+      setError('');
+
       emailjs.sendForm('service_xa19syp', 'template_sy3ym1s', form.current, 'M7cFK3UxI15ETlp6h')
         .then((result) => {
           console.log(result.text);
 
           setShowFeedbackMessage(true);
-          setError('');
           setName('');
           setEmail('');
           setMessage('');
