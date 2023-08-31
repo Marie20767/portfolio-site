@@ -21,15 +21,15 @@ const AboutSection = () => {
           <Description>
             <HeaderContainer>
               <h1>Hi, I&apos;m Marie.</h1>
-              <h1>I&apos;m a<span>&nbsp;front end</span></h1>
+              <h1>I&apos;m a<span>&nbsp;full stack</span></h1>
               <h1>web developer.</h1>
             </HeaderContainer>
             <MobileAndTabletImage>
               <img src={avatar} alt="Avatar of Marie" />
             </MobileAndTabletImage>
-            <p>I have 1 year of experience working<br />as a Freelance React Developer <br /> and on my personal projects.</p>
+            <p>I have 1.5 years of commercial<br /> experience and enjoy solving<br />difficult problems.</p>
             <Button>
-              <Link to="/work">View my work</Link>
+              <Link to="/work">View my projects</Link>
             </Button>
           </Description>
           <DesktopImage>

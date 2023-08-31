@@ -30,7 +30,7 @@ const Nav = () => {
             animate={{ width: pathname === '/' ? lineWidth : '0%' }} />
         </li>
         <li>
-          <Link to="/work">Work</Link>
+          <Link to="/work">Projects</Link>
           <Line
             transition={{ duration: 0.15, delay }}
             initial={{ width: '0%' }}
