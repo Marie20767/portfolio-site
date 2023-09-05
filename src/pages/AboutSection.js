@@ -22,7 +22,8 @@ const AboutSection = () => {
             <HeaderContainer>
               <h1>Hi, I&apos;m Marie.</h1>
               <h1>I&apos;m a<span>&nbsp;full stack</span></h1>
-              <h1>web developer.</h1>
+              <h1>React/NodeJS</h1>
+              <h1>Developer.</h1>
             </HeaderContainer>
             <MobileAndTabletImage>
               <img src={avatar} alt="Avatar of Marie" />
