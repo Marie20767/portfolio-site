@@ -113,7 +113,7 @@ const Contact = () => {
           </svg>
         </a>
       </header>
-      <p className="contact-description">I am available for remote/hybrid Front End/Full Stack Developer roles.</p>
+      <p className="contact-description">I am available for Front End/Full Stack Developer roles.</p>
       <form ref={form} onSubmit={sendEmail}>
         <input type="text" name="user_name" placeholder="Full Name" onChange={onChangeNameInput} value={name} />
         <input type="text" name="user_email" placeholder="E-mail" onChange={onChangeEmailInput} value={email} />

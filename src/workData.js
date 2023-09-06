@@ -8,7 +8,7 @@ const workData = [
     title: 'Nasa App (in progress)',
     image: NasaAppImage,
     imageAlt: 'Screenshot of Marie\'s Nasa App',
-    techStack: ['React', 'NodeJS', 'Express', 'MongoDB'],
+    techStack: ['React', 'NodeJS', 'Express', 'MongoDB', 'Jest'],
     url: null,
     githubLink: 'https://github.com/Marie20767/nasa-app',
   },
